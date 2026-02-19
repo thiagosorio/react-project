@@ -1,4 +1,4 @@
-# Calculadora de IMC — React + Vite
+# Calculadora de IMC - React + Vite
 
 Aplicação web para calcular **IMC (Índice de Massa Corporal)** a partir de **altura** e **peso**, exibindo o resultado e a **classificação** conforme a referência padrão (OMS), com destaque automático da faixa correspondente na tabela.
 
