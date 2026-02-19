@@ -1,0 +1,232 @@
+.card {
+  --imc-primary: rgba(100, 108, 255, 0.9);
+  --imc-focus: rgba(100, 108, 255, 0.2);
+  --imc-border: rgba(255, 255, 255, 0.2);
+  --imc-soft: rgba(0, 0, 0, 0.2);
+  --imc-white-muted: rgba(255, 255, 255, 0.5);
+  --imc-bg-light: rgba(255, 255, 255, 0.95);
+  --imc-border-light: rgba(0, 0, 0, 0.1);
+
+  width: 100%;
+  text-align: left;
+}
+
+.cardBody {
+  padding: clamp(1rem, 3vw, 1.75rem);
+  background-color: rgba(26, 26, 26, 0.9);
+  border: 1px solid var(--imc-border);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: end;
+  gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.label {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.input {
+  width: 100%;
+  height: 48px;
+  padding: 0 1rem;
+  background-color: var(--imc-soft);
+  color: inherit;
+  border: 1px solid var(--imc-border);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input::placeholder {
+  color: var(--imc-white-muted);
+}
+
+.input:focus {
+  border-color: var(--imc-primary);
+  box-shadow: 0 0 0 4px var(--imc-focus);
+}
+
+.input[type='number']::-webkit-outer-spin-button,
+.input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.button {
+  width: min(200px, 100%);
+  height: 48px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  background-color: var(--imc-primary);
+  color: var(--imc-bg-light);
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: transform 0.05s, background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+@media (min-width: 720px) {
+  .button {
+    justify-self: end;
+    margin: 0;
+  }
+}
+
+.button:hover {
+  background-color: rgba(100, 108, 255, 1);
+  border-color: var(--imc-white-muted);
+  box-shadow: 0 10px 22px var(--imc-border-light);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button:focus,
+.button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--imc-focus);
+}
+
+.result {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .result {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.resultBox {
+  padding: 1rem;
+  background-color: var(--imc-soft);
+  border: 1px solid var(--imc-border);
+  border-radius: 12px;
+}
+
+.resultLabel {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.resultValue {
+  margin: 0.25rem 0 0;
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.tableSection {
+  margin-top: 1.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--imc-border);
+}
+
+.tableHeader {
+  margin-bottom: 0.75rem;
+}
+
+.tableTitle {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.tableSubtitle {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.tableWrap {
+  max-width: 100%;
+  background-color: var(--imc-soft);
+  border: 1px solid var(--imc-border);
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+.table thead th {
+  padding: 0.9rem;
+  background-color: var(--imc-border);
+  border-bottom: 1px solid var(--imc-border);
+  font-weight: 700;
+  text-align: left;
+}
+
+.table tbody td {
+  padding: 0.9rem;
+  border-bottom: 1px solid var(--imc-border);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.activeRow td {
+  background-color: rgba(100, 108, 255, 0.12);
+}
+
+@media (prefers-color-scheme: light) {
+  .cardBody {
+    background-color: var(--imc-bg-light);
+    border-color: var(--imc-border-light);
+    box-shadow: 0 10px 30px var(--imc-border-light);
+  }
+
+  .input,
+  .resultBox,
+  .tableWrap {
+    border-color: var(--imc-border-light);
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+
+  .input::placeholder {
+    color: rgba(33, 53, 71, 0.55);
+  }
+
+  .table thead th {
+    background-color: rgba(0, 0, 0, 0.04);
+    border-bottom-color: var(--imc-border-light);
+  }
+
+  .table tbody td {
+    border-bottom-color: var(--imc-border-light);
+  }
+}
